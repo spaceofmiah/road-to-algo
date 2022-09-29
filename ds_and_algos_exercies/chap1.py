@@ -21,7 +21,12 @@ def is_multiple(n:int, m:int) -> bool:
 
 
 def is_even(k:int) -> bool:
-    """Returns True if k is even and False otherwise"""
+    """Returns True if k is even and False otherwise
+    
+    constraint:
+    -----------
+    Cannot use the multiplication, modulo, or division operators
+    """
     return True if divmod(k, 2)[-1] == 0 else False
 
 
