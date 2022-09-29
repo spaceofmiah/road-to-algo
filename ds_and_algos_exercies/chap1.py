@@ -1,4 +1,4 @@
-def is_multiple(n, m):
+def is_multiple(n:int, m:int):
     """Returns True if n is a multiple of m"""
     counter, flag = 1, True
     while True:
@@ -17,6 +17,6 @@ def is_multiple(n, m):
     return flag
 
 
-def is_even(k):
+def is_even(k:int):
     """Returns True if k is even and False otherwise"""
     return True if divmod(k, 2)[-1] == 0 else False
