@@ -20,3 +20,44 @@ def is_multiple(n:int, m:int):
 def is_even(k:int):
     """Returns True if k is even and False otherwise"""
     return True if divmod(k, 2)[-1] == 0 else False
+
+
+def compare(seq:list, old_min:int, old_max:int):
+    """Compares old minimum & maximum value with the next element
+    in the sequence 
+    """
+    if len(seq) == 0:
+        return old_min, old_max
+    
+    if len(seq) == 1:
+        return (
+            seq[0] if seq[0] < old_min else old_min, # compare sequence last element with prev old min
+            seq[0] if seq[0] > old_max else old_max  # compare sequence last element with prev old max
+        )
+
+    old_min, old_max = (seq[0] if seq[0] < old_min else old_min, seq[0] if seq[0] > old_max else old_max)
+    return compare(seq[1:], old_min, old_max)
+
+
+def minmax(seq:list):
+    """Returns the smallest and largest numbers
+    
+    constraint: 
+    -----------
+    Do not use the built-in functions min or max in implementing your solution.
+    
+        personal added constraint:
+        **************************
+        Do not use any built-in sort method/function
+
+        implementation would be very simple using any built-in function e.g
+
+            new_seq = sorted(seq)
+            return new_seq[0], new_seq[-1]
+    """
+    new_seq = seq
+    return compare(new_seq[1:], new_seq[0], new_seq[0])
+    
+
+
+        

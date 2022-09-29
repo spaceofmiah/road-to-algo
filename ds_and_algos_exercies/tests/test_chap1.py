@@ -28,6 +28,40 @@ class ChapterOneTestCase(TestCase):
         an odd number
         """
         self.assertFalse(chap1.is_even(1))
+    
+    def test_minmax_returns_minimum_and_maximum_value_in_a_sorted_list(self):
+        """Ensures minmax returns the minimum and maximum list
+        element from a sorted list
+        """
+        self.assertEqual(chap1.minmax([1, 2, 3]), (1, 3))
+    
+    def test_minmax_returns_minimum_and_maximum_value_in_an_unsorted_list(self):
+        """Ensures minmax returns the minimum and maximum list
+        element from an unsorted list
+        """
+        self.assertEqual(chap1.minmax([3, 1, 4, 2]), (1, 4))
+    
+    def test_minmax_returns_minimum_and_maximum_value_in_a_sorted_negative_integer_list(self):
+        """Ensures minmax returns the minimum and maximum list
+        element from a sorted negative integer list
+        """
+        self.assertEqual(chap1.minmax([-3, -2, -1, 0]), (-3, 0))
+    
+    def test_minmax_returns_minimum_and_maximum_value_in_an_unsorted_negative_integer_list(self):
+        """Ensures minmax returns the minimum and maximum list
+        element from a sorted negative integer list
+        """
+        self.assertEqual(chap1.minmax([ -1, -2, 0, -3 ]), (-3, 0))
+    
+    def test_minmax_returns_the_first_element_as_the_minimum_and_maximum_for_a_single_list(self):
+        """Ensure minmax retuns the first element as the minimum
+        and maximum in the list
+        """
+        self.assertEqual(chap1.minmax([-3]), (-3, -3))
+        self.assertEqual(chap1.minmax([3]), (3, 3))
+        
+    
+
 
 
 
