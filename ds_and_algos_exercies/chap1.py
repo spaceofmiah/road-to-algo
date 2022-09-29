@@ -1,4 +1,7 @@
-def is_multiple(n:int, m:int):
+from typing import Tuple
+
+
+def is_multiple(n:int, m:int) -> bool:
     """Returns True if n is a multiple of m"""
     counter, flag = 1, True
     while True:
@@ -17,12 +20,12 @@ def is_multiple(n:int, m:int):
     return flag
 
 
-def is_even(k:int):
+def is_even(k:int) -> bool:
     """Returns True if k is even and False otherwise"""
     return True if divmod(k, 2)[-1] == 0 else False
 
 
-def compare(seq:list, old_min:int, old_max:int):
+def compare(seq:list, old_min:int, old_max:int) -> Tuple[int, int]:
     """Compares old minimum & maximum value with the next element
     in the sequence 
     """
@@ -39,7 +42,7 @@ def compare(seq:list, old_min:int, old_max:int):
     return compare(seq[1:], old_min, old_max)
 
 
-def minmax(seq:list):
+def minmax(seq:list) -> Tuple[int, int]:
     """Returns the smallest and largest numbers
     
     constraint: 
