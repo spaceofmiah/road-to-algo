@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import List, Optional, Tuple
 
 
 def is_multiple(n:int, m:int) -> bool:
@@ -67,7 +67,19 @@ def minmax(seq:list) -> Tuple[int, int]:
     return compare(new_seq[1:], new_seq[0], new_seq[0])
     
 
-def square_sum(n:int) -> int:
+def number_squares_below_n(n:int, just_odd:Optional[bool]=False) -> List:
+    """returns a list of squares of intergers lesser than `n`
+    
+    parameters
+    ==========
+    just_odd <bool> [default: False]
+        when True returns squares all the odd positive integers
+        lesser than `n`
+    """
+    return [ i*i for i in range(1, n, 2) ] if just_odd else  [ i*i for i in range(n) ]
+
+
+def sum_squares(n) -> int:
     """returns the sum of the squares of all the positive 
     integers smaller than `n`
 
@@ -75,5 +87,17 @@ def square_sum(n:int) -> int:
     -------------
     Give a single command that computes the sum
     """
-    return sum([ i*i for i in range(n) ])
-        
+    return sum(number_squares_below_n(n, just_odd=False))
+
+
+def sum_odd_squares(n) -> int:
+    """returns the sum of the squares of all odd positive 
+    integers smaller than `n`
+
+    Requirements:
+    -------------
+    Give a single command that computes the sum, relying 
+    on Python’s comprehension syntax and the built-in sum 
+    function.
+    """
+    return sum(number_squares_below_n(n, just_odd=True))
