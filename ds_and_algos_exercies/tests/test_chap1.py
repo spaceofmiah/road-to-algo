@@ -59,6 +59,11 @@ def test_minmax_returns_the_first_element_as_the_minimum_and_maximum_for_a_singl
     """
     assert chap1.minmax([-3]) == (-3, -3)
     assert chap1.minmax([3]) == (3, 3)
+
+def test_square_sum_computes_appropriately():
+    """Ensures square sum computation is valid"""
+    assert chap1.square_sum(3) == 5
+    assert chap1.square_sum(4) == 14
     
     
 

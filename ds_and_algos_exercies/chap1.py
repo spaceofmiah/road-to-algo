@@ -67,5 +67,13 @@ def minmax(seq:list) -> Tuple[int, int]:
     return compare(new_seq[1:], new_seq[0], new_seq[0])
     
 
+def square_sum(n:int) -> int:
+    """returns the sum of the squares of all the positive 
+    integers smaller than `n`
 
+    Requirements:
+    -------------
+    Give a single command that computes the sum
+    """
+    return sum([ i*i for i in range(n) ])
         
