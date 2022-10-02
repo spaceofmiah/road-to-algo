@@ -106,3 +106,24 @@ def sum_odd_squares(n) -> int:
 def custom_reverse(data:list):
     """Reverses a list element to the opposite direction"""
     return data[::-1]
+
+
+def odd_product_pair(data:list) -> bool:
+    """takes a sequence of integer values and determines 
+    if there is a distinct pair of numbers in the 
+    sequence whose product is odd.
+    """
+    counter = len(data) - 1
+    directory = {}
+
+    while counter >= 0:
+        cur_val = data[counter]
+        for idx, value in enumerate(data):
+            if idx == counter: continue
+            if divmod(value * cur_val, 2)[-1] == 1:
+                if (value, cur_val) in directory or (cur_val, value) in directory: continue
+                directory[(value, cur_val)] = True
+        counter-=1
+    
+    return True if any(directory.values()) else False
+

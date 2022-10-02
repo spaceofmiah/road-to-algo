@@ -84,4 +84,22 @@ def test_data_reverses_accurately_using_custom_reverse():
         )
     )
 
+def test_odd_product_pair_returns_True_when_sequence_contains_pair_whose_product_result_is_odd():
+    """Ensure that odd_product_pair returns True when 
+    the product of any element pair results to an odd
+    value
+    """
+    assert chap1.odd_product_pair([1, 3]) is True
+    assert chap1.odd_product_pair([2, 3, 5]) is True
+    assert chap1.odd_product_pair([1, 12, 11, 6]) is True
+
+def test_odd_product_pair_returns_False_when_sequence_doesnt_contains_pair_whose_product_result_is_odd():
+    """Ensure that odd_product_pair returns False when 
+    the product of any element pair doesn't results to 
+    an odd value
+    """
+    assert chap1.odd_product_pair([1, 2, 4]) is False
+    assert chap1.odd_product_pair([2, 3, 4]) is False
+    assert chap1.odd_product_pair([1, 12, 4, 6]) is False
+
 
