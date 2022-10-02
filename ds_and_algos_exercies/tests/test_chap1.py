@@ -73,8 +73,15 @@ def test_sum_odd_squares_computes_appropriately():
     assert chap1.sum_odd_squares(5) == 10
     assert chap1.sum_odd_squares(6) == 35
     
-    
-
-
+def test_data_reverses_accurately_using_custom_reverse():
+    """Ensure data are reversed accurately"""
+    assert chap1.custom_reverse([1, 2, 3]) == list(reversed([1, 2, 3]))
+    # test double reverse
+    assert chap1.custom_reverse(
+        chap1.custom_reverse([1, 2, 3])
+    ) == list(reversed(
+            list(reversed([1, 2, 3]))
+        )
+    )
 
 

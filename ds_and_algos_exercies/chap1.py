@@ -101,3 +101,8 @@ def sum_odd_squares(n) -> int:
     function.
     """
     return sum(number_squares_below_n(n, just_odd=True))
+
+
+def custom_reverse(data:list):
+    """Reverses a list element to the opposite direction"""
+    return data[::-1]
