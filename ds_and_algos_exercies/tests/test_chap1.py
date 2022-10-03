@@ -102,4 +102,16 @@ def test_odd_product_pair_returns_False_when_sequence_doesnt_contains_pair_whose
     assert chap1.odd_product_pair([2, 3, 4]) is False
     assert chap1.odd_product_pair([1, 12, 4, 6]) is False
 
+def test_all_are_different_when_passed_a_list_with_different_distinct_values_returns_true():
+    """Ensures that all_are_different returns True when 
+    passed a list of distinct values
+    """
+    assert chap1.are_all_different([1, 2, 4]) is True
+    assert chap1.are_all_different([1, 2, 4, 8, 10, 15, 22, 30]) is True
 
+def test_all_are_different_when_passed_a_list_with_repeating_values_returns_false():
+    """Ensures that all_are_different returns False when 
+    passed a list of repeating values
+    """
+    assert chap1.are_all_different([1, 2, 4, 2]) is False
+    assert chap1.are_all_different([10, 2, 4, 8, 10, 15, 22, 30]) is False

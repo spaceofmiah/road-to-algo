@@ -127,3 +127,10 @@ def odd_product_pair(data:list) -> bool:
     
     return True if any(directory.values()) else False
 
+
+def are_all_different(data:list):
+    """takes a sequence of numbers and determines
+    if all the numbers are different from each 
+    other (that is, they are distinct)
+    """
+    return True if len(set(data)) == len(data) else False
