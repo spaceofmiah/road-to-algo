@@ -103,7 +103,7 @@ def sum_odd_squares(n) -> int:
     return sum(number_squares_below_n(n, just_odd=True))
 
 
-def custom_reverse(data:list):
+def custom_reverse(data:list) -> list:
     """Reverses a list element to the opposite direction"""
     return data[::-1]
 
@@ -128,7 +128,7 @@ def odd_product_pair(data:list) -> bool:
     return True if any(directory.values()) else False
 
 
-def are_all_different(data:list):
+def are_all_different(data:list) -> bool:
     """takes a sequence of numbers and determines
     if all the numbers are different from each 
     other (that is, they are distinct)
