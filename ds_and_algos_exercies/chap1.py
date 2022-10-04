@@ -134,3 +134,12 @@ def are_all_different(data:list) -> bool:
     other (that is, they are distinct)
     """
     return True if len(set(data)) == len(data) else False
+
+
+def generate_the_alphabet() -> list:
+    """Demonstrate how to use Python’s list 
+    comprehension syntax to produce the list 
+    [ a , b , c , ..., z ], but without having 
+    to type all 26 such characters literally
+    """
+    return [chr(i) for i in range(ord('a'), ord('z') + 1)]

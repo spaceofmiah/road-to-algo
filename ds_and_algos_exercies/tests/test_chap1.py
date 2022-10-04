@@ -115,3 +115,66 @@ def test_all_are_different_when_passed_a_list_with_repeating_values_returns_fals
     """
     assert chap1.are_all_different([1, 2, 4, 2]) is False
     assert chap1.are_all_different([10, 2, 4, 8, 10, 15, 22, 30]) is False
+
+def test_all_alphabet_are_completely_generated():
+    """Ensure that all alphabet are generated on call to 
+    generate_the_alphabet
+    """
+    assert 'a' in chap1.generate_the_alphabet()
+    assert 'b' in chap1.generate_the_alphabet()
+    assert 'c' in chap1.generate_the_alphabet()
+    assert 'd' in chap1.generate_the_alphabet()
+    assert 'e' in chap1.generate_the_alphabet()
+    assert 'f' in chap1.generate_the_alphabet()
+    assert 'g' in chap1.generate_the_alphabet()
+    assert 'h' in chap1.generate_the_alphabet()
+    assert 'i' in chap1.generate_the_alphabet()
+    assert 'j' in chap1.generate_the_alphabet()
+    assert 'k' in chap1.generate_the_alphabet()
+    assert 'l' in chap1.generate_the_alphabet()
+    assert 'm' in chap1.generate_the_alphabet()
+    assert 'n' in chap1.generate_the_alphabet()
+    assert 'o' in chap1.generate_the_alphabet()
+    assert 'p' in chap1.generate_the_alphabet()
+    assert 'q' in chap1.generate_the_alphabet()
+    assert 'r' in chap1.generate_the_alphabet()
+    assert 's' in chap1.generate_the_alphabet()
+    assert 't' in chap1.generate_the_alphabet()
+    assert 'u' in chap1.generate_the_alphabet()
+    assert 'v' in chap1.generate_the_alphabet()
+    assert 'w' in chap1.generate_the_alphabet()
+    assert 'x' in chap1.generate_the_alphabet()
+    assert 'y' in chap1.generate_the_alphabet()
+    assert 'z' in chap1.generate_the_alphabet()
+
+def test_generated_alphabet_are_well_positioned():
+    """Ensure that generated alphabet are position
+    appropriately
+    """
+    assert 'a' == chap1.generate_the_alphabet()[0]
+    assert 'b' == chap1.generate_the_alphabet()[1]
+    assert 'c' == chap1.generate_the_alphabet()[2]
+    assert 'd' == chap1.generate_the_alphabet()[3]
+    assert 'e' == chap1.generate_the_alphabet()[4]
+    assert 'f' == chap1.generate_the_alphabet()[5]
+    assert 'g' == chap1.generate_the_alphabet()[6]
+    assert 'h' == chap1.generate_the_alphabet()[7]
+    assert 'i' == chap1.generate_the_alphabet()[8]
+    assert 'j' == chap1.generate_the_alphabet()[9]
+    assert 'k' == chap1.generate_the_alphabet()[10]
+    assert 'l' == chap1.generate_the_alphabet()[11]
+    assert 'm' == chap1.generate_the_alphabet()[12]
+    assert 'n' == chap1.generate_the_alphabet()[13]
+    assert 'o' == chap1.generate_the_alphabet()[14]
+    assert 'p' == chap1.generate_the_alphabet()[15]
+    assert 'q' == chap1.generate_the_alphabet()[16]
+    assert 'r' == chap1.generate_the_alphabet()[17]
+    assert 's' == chap1.generate_the_alphabet()[18]
+    assert 't' == chap1.generate_the_alphabet()[19]
+    assert 'u' == chap1.generate_the_alphabet()[20]
+    assert 'v' == chap1.generate_the_alphabet()[21]
+    assert 'w' == chap1.generate_the_alphabet()[22]
+    assert 'x' == chap1.generate_the_alphabet()[23]
+    assert 'y' == chap1.generate_the_alphabet()[24]
+    assert 'z' == chap1.generate_the_alphabet()[25]
+    
