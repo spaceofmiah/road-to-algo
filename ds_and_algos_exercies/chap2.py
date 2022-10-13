@@ -1,5 +1,4 @@
 
-# TODO :: add test
 class Flower:
 
     def __init__(self, name:str, petals_num:int, price:float) -> None:
@@ -27,6 +26,6 @@ class Flower:
         """Returns flower's price"""
         return self._price
     
-    def get_petal_number(self) -> int:
+    def get_petal(self) -> int:
         """Returns flower's petal count"""
         return self._petal_num
