@@ -153,6 +153,9 @@ class CreditCard:
         Return True if charge was processed; False if charge was
         denied.
         """
+        if not isinstance(price, (int, float)):
+            raise ValueError('A numeric instance is required')
+
         if price + self._balance > self._limit:
             return False
         else:
@@ -161,6 +164,9 @@ class CreditCard:
         
     def make_payment(self, amount):
         """Process customer payment that reduces balance"""
+        if not isinstance(amount, (int, float)):
+            raise ValueError('A numeric instance is required')
+            
         self._balance -= amount
 
 
