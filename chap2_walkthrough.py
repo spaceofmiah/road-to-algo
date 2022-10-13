@@ -30,6 +30,17 @@ class Vector:
             result[i] = self[i] + other[i]
         
         return result
+    
+    def __sub__(self, other) -> "Vector":
+        """Return difference of two vectors"""
+        if len(self) != len(other):
+            raise ValueError("Dimension must be same")
+        
+        result = Vector(len(self))
+        for i in range(len(self)):
+            result[i] = self[i] - other[i]
+        
+        return result
 
     def __eq__(self, other: "Vector") -> bool:
         """Returns True if vector has same coordinate as other"""
@@ -46,19 +57,34 @@ class Vector:
 
 def vector_check():
     """Experiment with custom Vector class"""
-    v = Vector(5)
-    v[1] = 23
-    v[-1] = 45
-    print(v)
-    print(v[4])
-    u = v + v
-    print(u)
-    total = 0
+    print("========= Working with First Vector ===========")
+    first_vector = Vector(5)
 
-    for entry in v:
-        total += entry
-    
-    print(total)
+    first_vector[1] = 23
+    first_vector[-1] = 45
+    print(first_vector)
+
+    print("\n========= Working with Second Vector ==========")
+    second_vector = Vector(5)
+    second_vector[0] = 4
+    second_vector[1] = 3
+    second_vector[2] = 8
+    second_vector[3] = 13
+    second_vector[4] = 44
+
+    print(second_vector)
+
+    sum_vectors = first_vector + second_vector
+    sub_vectors = first_vector - second_vector
+    print("\n\n----Sum of Vectors")
+    print(f"- {first_vector}")
+    print(f"- {second_vector}")
+    print(f"\n= {sum_vectors}")
+
+    print("\n\n----Sub of Vectors")
+    print(f"- {first_vector}")
+    print(f"- {second_vector}")
+    print(f"\n= {sub_vectors}")
 
 
 class Range:
@@ -324,4 +350,4 @@ def progression_check():
 
 
 if __name__ == "__main__":
-    progression_check()
+    vector_check()
