@@ -166,7 +166,10 @@ class CreditCard:
         """Process customer payment that reduces balance"""
         if not isinstance(amount, (int, float)):
             raise ValueError('A numeric instance is required')
-            
+        
+        if amount < 0:
+            raise ValueError("Cannot supply negative value")
+
         self._balance -= amount
 
 
