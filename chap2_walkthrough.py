@@ -1,5 +1,8 @@
 
 
+from typing import Union
+
+
 class Vector:
     """Represents a vector in a multidimensional space."""
 
@@ -41,7 +44,28 @@ class Vector:
             result[i] = self[i] - other[i]
         
         return result
-
+    
+    def __mul__(self, n) -> Union["Vector", int]:
+        """*n the coordinate value"""
+        if not isinstance(n, Vector):
+            result = Vector(len(self))
+            for i in range(len(self)):
+                result[i] = self[i] * n
+            
+            return result
+        
+        if len(self) != len(n):
+            raise ValueError("Dimension must be same")
+        
+        total = 0
+        for i in range(len(self)):
+            total += self[i] * n[i]
+        
+        return total
+    
+    def __rmul__(self, n) -> Union["Vector", int]:
+        return self.__mul__(n)
+        
     def __eq__(self, other: "Vector") -> bool:
         """Returns True if vector has same coordinate as other"""
         return self._coords == other._coords
@@ -85,6 +109,14 @@ def vector_check():
     print(f"- {first_vector}")
     print(f"- {second_vector}")
     print(f"\n= {sub_vectors}")
+
+    print("\n\n----Vector Multiplication by Scaler")
+    print(f"- {first_vector}    = {first_vector * 3}")
+    print(f"- {second_vector}    = {second_vector * 3}")
+
+    print("\n\n----Vector Multiplication by Vector")
+    print(f"- {first_vector} * {second_vector}    = {second_vector * first_vector}")
+    
 
 
 class Range:
