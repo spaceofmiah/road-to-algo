@@ -108,7 +108,7 @@ def range_check():
 class CreditCard:
     """A customer credit card"""
 
-    def __init__(self, customer, bank, acnt, limit) -> None:
+    def __init__(self, customer, bank, acnt, limit, initial_deposit=None) -> None:
         """Create a new card instance.
         
         The initial balance is zero.
@@ -119,12 +119,13 @@ class CreditCard:
         bank        name of bank ( e.g 'Kuda Bank')
         acnt        account identifier (e.g '5391 0375 9387 5309')
         limit       credit limit(measured in dollars)
+        initial_deposit     amount to create the card with
         """
         self._customer = customer
         self._bank = bank
         self._account = acnt
         self._limit = limit
-        self._balance = 0
+        self._balance = 0 if not initial_deposit else initial_deposit
 
     def get_customer(self) -> str:
         """Returns customer name"""
