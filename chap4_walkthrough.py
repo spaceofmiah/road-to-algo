@@ -1,3 +1,5 @@
+import os
+import pathlib
 
 def factorial(n):
     if n == 0:
@@ -63,6 +65,24 @@ def binary_search(data, target, low, high):
             return binary_search(data, target, mid + 1, high)
 
 
-search_list=[2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 23, 24, 25, 26, 28, 30, 31, 32, 34, 36]
-print(binary_search(search_list, 36, 0, len(search_list)-1))
+# search_list=[2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 23, 24, 25, 26, 28, 30, 31, 32, 34, 36]
+# print(binary_search(search_list, 36, 0, len(search_list)-1))
 
+
+
+def disk_usage(path):
+    """Return the number of bytes used by a file/folder and
+    any decendants
+    """
+    total = os.path.getsize(path)
+    if os.path.isdir(path):
+        for filename in os.listdir(path):
+            child = os.path.join(path, filename)
+            total += disk_usage(child)
+
+    print('{0:<7}'.format(total), path)
+    return total
+
+
+work_dir = pathlib.Path('.').absolute()
+print(disk_usage(work_dir))
