@@ -46,6 +46,10 @@ def draw_ruler(num_inches, major_length):
 # print(draw_ruler(3, 2))
 
 
+# ---
+# Binary Search
+# ---
+
 def binary_search(data, target, low, high):
     """Return True if target is found in indicated portion of
     a python list.
@@ -69,6 +73,9 @@ def binary_search(data, target, low, high):
 # print(binary_search(search_list, 36, 0, len(search_list)-1))
 
 
+# ---
+# Directory Disk Usage
+# ---
 
 def disk_usage(path):
     """Return the number of bytes used by a file/folder and
@@ -84,5 +91,32 @@ def disk_usage(path):
     return total
 
 
-work_dir = pathlib.Path('.').absolute()
-print(disk_usage(work_dir))
+# work_dir = pathlib.Path('.').absolute()
+# print(disk_usage(work_dir))
+
+
+# ---
+# Fibonacci
+# ---
+
+def bad_fibonacci(n):
+    """Returns the nth fibonacci number"""
+    if n <= 1:
+        return n
+    else:
+        return bad_fibonacci(n-2) + bad_fibonacci(n-1)
+
+# print(bad_fibonacci(20))
+
+def good_fibonacci(n):
+    """Returns pair of Fibonacci numbers 
+    F(n) and F(n-1)
+    """
+    if n <= 1:
+        return (n, 0)
+    else:
+        (a, b) = good_fibonacci(n - 1)
+        return (a + b, a)
+
+print(good_fibonacci(20))
+
