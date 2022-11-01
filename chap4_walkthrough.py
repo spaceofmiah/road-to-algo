@@ -118,5 +118,17 @@ def good_fibonacci(n):
         (a, b) = good_fibonacci(n - 1)
         return (a + b, a)
 
-print(good_fibonacci(20))
+# print(good_fibonacci(20))
 
+
+def linear_sum(S, n):
+    """Return the sum of the first n numbers 
+    of sequence S
+    """
+    if n == 0:
+        return 0
+    else:
+        return linear_sum(S, n-1) + S[n-1]
+
+
+print(linear_sum([2, 3, 4, 5], 4))
