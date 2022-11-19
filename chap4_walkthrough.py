@@ -142,6 +142,18 @@ def reverse(S, start:int, stop:int):
     return S
 
 
-actual_list = [10, 30, 20, 50, 40, 70, 60, 90, 80,  1000]
-print(f"Actual list: -->  {actual_list}")
-print(f"Reversed list: --> {reverse(actual_list, 0, len(actual_list))}")
+# actual_list = [10, 30, 20, 50, 40, 70, 60, 90, 80,  1000]
+# print(f"Actual list: -->  {actual_list}")
+# print(f"Reversed list: --> {reverse(actual_list, 0, len(actual_list))}")
+
+
+def power(x:int, n:int):
+    """Compute the value x ** n for integer n"""
+    if n == 0:
+        return 1
+    else:
+        return x * power(x, n - 1)
+        
+
+
+print(power(2, 10))
