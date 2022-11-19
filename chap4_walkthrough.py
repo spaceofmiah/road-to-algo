@@ -131,4 +131,17 @@ def linear_sum(S, n):
         return linear_sum(S, n-1) + S[n-1]
 
 
-print(linear_sum([2, 3, 4, 5], 4))
+# print(linear_sum([2, 3, 4, 5], 4))
+
+
+def reverse(S, start:int, stop:int):
+    """Reverse elements in implicit slice S[start:stop]"""
+    if start < stop - 1:
+        S[start], S[stop - 1] = S[stop - 1], S[start]
+        return reverse(S, start + 1, stop - 1)
+    return S
+
+
+actual_list = [10, 30, 20, 50, 40, 70, 60, 90, 80,  1000]
+print(f"Actual list: -->  {actual_list}")
+print(f"Reversed list: --> {reverse(actual_list, 0, len(actual_list))}")
