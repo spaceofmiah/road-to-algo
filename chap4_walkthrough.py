@@ -155,5 +155,21 @@ def power(x:int, n:int):
         return x * power(x, n - 1)
         
 
+# print(power(2, 10))
 
-print(power(2, 10))
+def power_olog(x:int, n:int):
+    """Compute the value x ** n for integer n"""
+    if n == 0:
+        return 1
+    else:
+        partial = power_olog(x, n // 2)
+        result = partial * partial
+        if n % 2 == 1:
+            result *= x
+        return result
+
+print(power_olog(2, 10))
+
+
+
+
